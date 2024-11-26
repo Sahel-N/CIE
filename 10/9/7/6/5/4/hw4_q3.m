@@ -1,0 +1,10 @@
+n_classes = 4;
+X = 200;
+data_location = randn(X, 2) + randn(1, 2);
+figure;
+scatter(data_location(:, 1), data_location(:, 2), 36, 'filled');
+title('Unlabled');
+[idx, centers] = kmeans(data_location, n_classes);
+figure;
+scatter(data_location(:, 1), data_location(:, 2), 36, idx, 'filled');
+title('Unlabled');
